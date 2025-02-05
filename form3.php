@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>Hello</title>
+    <script>
+        function clearMessage() {
+            document.getElementById("welcome-message").innerHTML = ""; 
+        }
+    </script>
 </head>
 <body>
 
@@ -16,16 +21,13 @@
         <br><br>
 
         <button type="submit">LOGIN</button>
-        <button type="reset">RESET</button>
+        <button type="reset" onclick="clearMessage()">RESET</button>
     </form>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST["username"]; 
-        $password = $_POST["password"];
-        echo "<p>Welcome: $username</p>";
-
-        
+        $username = htmlspecialchars($_POST["username"]); 
+        echo "<p id='welcome-message'>Welcome: $username</p>";
     }
     ?>
 
