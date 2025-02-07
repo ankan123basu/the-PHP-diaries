@@ -46,5 +46,12 @@ echo add2(1.2, 5.2);
 
 
 
+function process($num1, $num2, $num3){
+    $product = $num1 * $num2 * $num3;
+    echo "The product of $num1, $num2 and $num3 is: $product";
+}
+process(2, 3, 4); // Calling the function
+
+
 
 ?>
